@@ -4,6 +4,9 @@ Evgenikk Infra repository
 bastion_IP = 35.207.138.155
 someinternalhost_IP = 10.156.0.3
 
+testapp_IP = 35.242.229.74 
+testapp_port = 9292
+
 Подключение к someiternalhost в одну команду:
 
  ssh -o ProxyCommand="ssh Radio@35.207.138.155 nc %h %p" Radio@10.156.0.3
