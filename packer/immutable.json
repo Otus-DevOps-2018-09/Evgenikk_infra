@@ -38,14 +38,14 @@
             "script": "scripts/install_mongodb.sh",
             "execute_command": "sudo {{.Path}}"
            },
-		{
+           {
 			"type": "shell",
 			"script": "scripts/deploy.sh",
 			"execute_command": "sudo -u appuser {{.Path}}"
-		},
+        },
 		{
 			"type": "file",
-			"source": "store/puma.service",
+			"source": "files/puma.service",
 			"destination": "/home/appuser/"
 		},
 		{
