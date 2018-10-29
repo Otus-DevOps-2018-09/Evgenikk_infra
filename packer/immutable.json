@@ -1,0 +1,60 @@
+{
+	"variables": {
+		"project_id": "null",
+		"machine_type": "g1-small",
+		"image_description": "immutable puma-server",
+		"disk_size": "10",
+		"disk_type": "pd-standard",
+		"tags": "puma-server",
+		"network": "default",
+		"preemptible": "true"
+	},
+	"builders": [
+		{
+			"type": "googlecompute",
+			"project_id": "{{ user `project_id` }}",
+			"image_name": "reddit-full-immutable-{{timestamp}}",
+			"image_description": "{{user `image_description`}}",
+			"image_family": "reddit-full",
+			"source_image_family": "reddit-base",
+			"zone": "europe-west1-b",
+			"ssh_username": "appuser",
+			"machine_type": "{{user `machine_type`}}",
+			"disk_size": "{{user `disk_size`}}",
+			"disk_type": "{{user `disk_type`}}",
+			"tags": "{{user `tags`}}",
+			"network": "{{user `network`}}",
+			"preemptible": "{{user `preemptible`}}"
+		}
+	],
+    "provisioners": [
+        {
+            "type": "shell",
+            "script": "scripts/install_ruby.sh",
+            "execute_command": "sudo {{.Path}}"
+           },
+           {
+            "type": "shell",
+            "script": "scripts/install_mongodb.sh",
+            "execute_command": "sudo {{.Path}}"
+           },
+		{
+			"type": "shell",
+			"script": "scripts/deploy.sh",
+			"execute_command": "sudo -u appuser {{.Path}}"
+		},
+		{
+			"type": "file",
+			"source": "store/puma.service",
+			"destination": "/home/appuser/"
+		},
+		{
+			"type": "shell",
+			"inline": [
+                "sudo mv /home/appuser/puma.service /lib/systemd/system/",
+                "sudo systemctl daemon-reload",
+				"sudo systemctl enable puma"
+			]
+		}
+	]
+}
