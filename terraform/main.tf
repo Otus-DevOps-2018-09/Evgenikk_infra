@@ -11,25 +11,24 @@ data "local_file" "appuser_key" {
   }
 resource "google_compute_project_metadata" "add_keys" {
   metadata {
-    ssh-keys =  <<EOF
-    appuser1:${chomp(data.local_file.appuser_key.content)} appuser1@MacBook-Pro-Radio.local
-    appuser2:${chomp(data.local_file.appuser_key.content)} appuser2@MacBook-Pro-Radio.local
-    appuser3:${chomp(data.local_file.appuser_key.content)}  appuser3@MacBook-Pro-Radio.local
-    Radio:${chomp(data.local_file.appuser_key.content)} Radio@MacBook-Pro-Radio.local
-    EOF
-    #ssh-keys = "Radio:${chomp(data.local_file.appuser_key.content)} Radio@MacBook-Pro-Radio.local"
+    #ssh-keys =  <<EOF
+    #appuser1:${chomp(data.local_file.appuser_key.content)} appuser1@MacBook-Pro-Radio.local
+    #appuser2:${chomp(data.local_file.appuser_key.content)} appuser2@MacBook-Pro-Radio.local
+    #appuser3:${chomp(data.local_file.appuser_key.content)}  appuser3@MacBook-Pro-Radio.local
+    #Radio:${chomp(data.local_file.appuser_key.content)} Radio@MacBook-Pro-Radio.local
+    #EOF
+    ssh-keys = "Radio:${chomp(data.local_file.appuser_key.content)} Radio@MacBook-Pro-Radio.local"
 
   }
   project = "${var.project}"
 }
 #Разворачиваем приложение
 resource "google_compute_instance" "app" {
-  name         = "reddit-app"
+  name         = "reddit-app-${count.index + 1}"
   machine_type = "g1-small"
   zone         = "${var.region}"
-
+  count  = "${var.app_count}"
   # определение загрузочного диска
-
   boot_disk {
     initialize_params {
       image = "${var.disk_image}"
