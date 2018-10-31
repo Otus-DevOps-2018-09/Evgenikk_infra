@@ -1,0 +1,5 @@
+project = "null"
+public_key_path = "~/.ssh/id_rsa.pub"
+disk_image = "reddit-base" 
+private_key_path = "~/.ssh/id_rsa"
+region = "europe-west2"
