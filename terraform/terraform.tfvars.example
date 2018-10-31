@@ -1,5 +1,5 @@
 project = "null"
-public_key_path = "~/.ssh/id_rsa.pub"
+public_key_path = "/Users/Radio/.ssh/appuser/id_rsa.pub"
 disk_image = "reddit-base" 
-private_key_path = "~/.ssh/id_rsa"
-region = "europe-west2"
+private_key_path = "/Users/Radio/.ssh/appuser/id_rsa"
+app_count = "2"
