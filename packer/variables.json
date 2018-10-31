@@ -1,0 +1,9 @@
+{
+"project-id": "infra-219513",
+"source-image": "ubuntu-1604-lts",
+"machine_type": "f1-micro",
+"network_tags": "puma-server",
+"description": "image with installed ruby, mongodb",
+"disk_size": "10",
+"disc_type": "pd-standard"
+}
