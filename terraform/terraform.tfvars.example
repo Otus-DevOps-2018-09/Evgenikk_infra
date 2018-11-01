@@ -1,7 +1,7 @@
-project = "infra-blabla"
-public_key_path = "~/.ssh/id_rsa.pub"
+project = "project_name"
+public_key_path = "~/.ssh/appuser.pub"
+private_key_path = "~/.ssh/appuser"
 disk_image = "reddit-base" 
-private_key_path = "~/.ssh/id_rsa"
 app_count = "2"
 
 
