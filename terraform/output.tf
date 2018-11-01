@@ -6,6 +6,6 @@ output "app_external_ip" {
 #value = "${data.local_file.appuser_key.content}"
 #}
 
-output "load_balancer_external_ip" {
-  value = "${google_compute_global_forwarding_rule.reddit_forwarding_rule.ip_address}"
-}
+#output "load_balancer_external_ip" {
+#  value = "${google_compute_global_forwarding_rule.reddit_forwarding_rule.ip_address}"
+#}
