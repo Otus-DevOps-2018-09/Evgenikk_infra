@@ -30,6 +30,7 @@ resource "google_compute_instance" "app" {
   zone         = "${var.region}"
   count        = "${var.app_count}"
 
+
   # определение загрузочного диска
   boot_disk {
     initialize_params {
