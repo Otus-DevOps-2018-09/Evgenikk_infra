@@ -1,6 +1,0 @@
-/Users/Radio/git_workspace/otus/Evgenikk_infra/packer/variables.json
-*.tfstate
-*.tfstate.*.backup
-*.tfstate.backup
-*.tfvars
-.terraform/
