@@ -4,7 +4,6 @@
      "type": "googlecompute",
      "project_id": "{{ user `project-id` }}",
      "image_name": "mongo-{{timestamp}}",
-     "disk_size": "{{ user `disk_sizeGB` }}",
      "image_family": "mongo-base",
      "source_image_family": "{{ user `source-image` }}",
      "zone": "europe-west1-b",
@@ -12,8 +11,6 @@
      "machine_type": "{{ user `machine_type` }}",
      "tags": "{{ user `network_tags` }}",
      "image_description": "{{ user `description` }}",
-     "disk_size": "10",
-     "disk_type": "{{user `disk_type`}}",
      "tags": "ssh-packer" 
     }
     ],
