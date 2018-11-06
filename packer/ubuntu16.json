@@ -11,9 +11,7 @@
      "ssh_username": "appuser",
      "machine_type": "{{ user `machine_type` }}",
      "tags": "{{ user `network_tags` }}",
-     "image_description": "{{ user `description` }}",
-     "disk_size": "10",
-     "disk_type": "{{user `disk_type`}}"  
+     "image_description": "{{ user `description` }}"
     }
     ],
     "provisioners": [
@@ -29,5 +27,5 @@
         }
     ]
    }
-
    
+
