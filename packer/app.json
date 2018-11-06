@@ -13,8 +13,7 @@
      "tags": "{{ user `network_tags` }}",
      "image_description": "{{ user `description` }}",
      "disk_size": "10",
-     "disk_type": "{{user `disk_type`}}",
-     "tags": "ssh-packer"
+     "disk_type": "{{user `disk_type`}}"
     }
     ],
     "provisioners": [
@@ -27,4 +26,3 @@
    }
 
 
-   
