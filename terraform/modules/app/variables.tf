@@ -11,3 +11,8 @@ variable app_disk_image {
   description = "Disk image for reddit app"
   default     = "app-reddit-base"
 }
+
+variable "private_key_path" {
+  description = "path to private key"
+  default     = "~/.ssh/id.rsa"
+}

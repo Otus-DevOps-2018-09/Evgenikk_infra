@@ -8,6 +8,7 @@ variable disk_image {
 
 variable private_key_path {
   description = "Path to the private key used for ssh access"
+  default     = "~/.ssh/id_rsa"
 }
 
 variable "app_count" {
