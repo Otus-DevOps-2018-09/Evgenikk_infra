@@ -1,7 +1,7 @@
 # Evgenikk_infra
 Evgenikk Infra repository
 
-#Данные для подключения:
+### Данные для подключения:
 ```
 bastion_IP = 35.207.138.155
 someinternalhost_IP = 10.156.0.3
@@ -9,7 +9,7 @@ someinternalhost_IP = 10.156.0.3
 testapp_IP = 35.242.229.74 
 testapp_port = 9292
 ```
-#Работа с GCP (web)
+### Работа с GCP (web)
 
 Подключение к someiternalhost в одну команду:
 ```
@@ -26,7 +26,7 @@ port 22
 user Radio
 ProxyCommand ssh Radio@35.207.138.155 nc %h %p
 ```
-#Работа с GCP (консоль)
+### Работа с GCP (консоль)
 Для создания правила в firewall на puma-server  используется комманда:
 ```
 gcloud compute firewall-rules create default-puma-server --allow=TCP:9292 --target-tags=puma-server
@@ -52,7 +52,7 @@ default-puma-server
 
 ```
 
-#Packer
+### Packer
 Для создания образа  reddit-base:
 ```
 packer build ubuntu16.json
@@ -63,7 +63,7 @@ packer build immutable.json
 ```
 Переменные  для создания обоих образов содержаться в файле /packer/variables.json
 
-# Terraform
+### Terraform
 При добавлении одного ключа через terraform подключение происходит успешно, добавляя множество одинаковых ключей для разных пользователей, подключаться не удается (host key verification failed). Формат добавленных ключей в обоих ситуациях совпадает.
 
 
@@ -72,7 +72,7 @@ lb.tf создает балансировщик нагрузки между ин
 Все переменные содержаться в  terraform.tfvars. Значения переменных по умолчанию можно посмотреть в  variables.tf
 
 
-#Terraform-2 
+### Terraform-2 
 
 Были написаны модули для создания двух виртуальных машин с базой данных (db module ) и с приложением (app module).
 Модули используются в файлах main.tf папок   stage и prod.
@@ -81,7 +81,7 @@ lb.tf создает балансировщик нагрузки между ин
 В модуле app  закоментирован provisioner, так как поставленную задачу еще не решает, но успешно запускается. Оставил как пример на будущее.
 
 
-#Ansible-1 
+### Ansible-1 
 В ходе работы:
 Установлен ansible
 Созданы файлы inventory и inventory.yml
