@@ -4,7 +4,7 @@
      "type": "googlecompute",
      "project_id": "{{ user `project-id` }}",
      "image_name": "mongo-{{timestamp}}",
-     "image_family": "mongo-base",
+     "image_family": "mongo-base-ansible",
      "source_image_family": "{{ user `source-image` }}",
      "zone": "europe-west1-b",
      "ssh_username": "appuser",
@@ -16,11 +16,10 @@
     ],
     "provisioners": [
         {
-         "type": "shell",
-         "script": "scripts/install_mongodb.sh",
-         "execute_command": "sudo {{.Path}}"
+        "type": "ansible",
+        "playbook_file": "ansible/packer_db.yml"
         }
-    ]
+        ] 
    }
 
    

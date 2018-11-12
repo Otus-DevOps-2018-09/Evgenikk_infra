@@ -4,22 +4,22 @@
      "type": "googlecompute",
      "project_id": "{{ user `project-id` }}",
      "image_name": "app-reddit-{{timestamp}}",
-     "image_family": "app-reddit-base",
+     "image_family": "app-reddit-base-ansible",
      "source_image_family": "{{ user `source-image` }}",
      "zone": "europe-west1-b",
      "ssh_username": "appuser",
      "machine_type": "{{ user `machine_type` }}",
      "tags": "{{ user `network_tags` }}",
-     "image_description": "{{ user `description` }}"
+     "image_description": "{{ user `description` }}",
+     "tags": "ssh-packer" 
     }
     ],
     "provisioners": [
         {
-         "type": "shell",
-         "script": "scripts/install_ruby.sh",
-         "execute_command": "sudo {{.Path}}"
+        "type": "ansible",
+        "playbook_file": "ansible/packer_app.yml"
         }
-    ]
+        ] 
    }
 
 

@@ -23,12 +23,12 @@ variable region {
 
 variable app_disk_image {
   description = "Disk image for reddit app"
-  default     = "app-reddit-base"
+  default     = "app-reddit-base-ansible"
 }
 
 variable db_disk_image {
   description = "Disk image for reddit db"
-  default     = "mongo-base"
+  default     = "mongo-base-ansible"
 }
 
 variable public_key_path {
