@@ -3,6 +3,5 @@
 "source-image": "ubuntu-1604-lts",
 "machine_type": "f1-micro",
 "network_tags": "puma-server",
-"description": "image with installed ruby, mongodb",
-"disc_type": "pd-standard"
+"description": "image with installed ruby, mongodb"
 }

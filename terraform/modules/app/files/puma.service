@@ -1,0 +1,8 @@
+[Unit]
+Description=Start puma-service
+[Service]
+WorkingDirectory=/home/appuser/reddit
+ExecStart= /bin/bash -c '/usr/local/bin/puma -d'
+Type= forking
+[Install]
+WantedBy=multi-user.target
