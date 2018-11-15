@@ -1,3 +1,4 @@
+.DS_Store
 /Users/Radio/git_workspace/otus/Evgenikk_infra/packer/variables.json
 *.tfstate
 *.tfstate.*.backup
