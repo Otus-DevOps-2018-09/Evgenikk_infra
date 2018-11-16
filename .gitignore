@@ -1,5 +1,3 @@
-ansible/environments/stage/requirements.yml
-ansible/environments/prod/requirements.yml
 .DS_Store
 /Users/Radio/git_workspace/otus/Evgenikk_infra/packer/variables.json
 *.tfstate
