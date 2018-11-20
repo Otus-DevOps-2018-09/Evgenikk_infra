@@ -12,12 +12,14 @@ cd /usr/local/src
 sudo pip install ansible-lint
 ansible-lint --version
 
+sudo rm -f packer*.zip
 sudo wget https://releases.hashicorp.com/terraform/0.11.9/terraform_0.11.9_linux_386.zip
 sudo unzip  -o terraform_*.zip
 sudo rm -f terraform_*.zip
 sudo mv -f /usr/local/src/terraform /usr/local/bin/
 
 # Устанавливаем  tflint
+
 sudo wget https://github.com/wata727/tflint/releases/download/v0.7.2/tflint_linux_386.zip
 sudo unzip -o tflint_*.zip
 sudo rm -f tflint_*.zip
