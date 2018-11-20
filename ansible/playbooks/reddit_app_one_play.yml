@@ -2,7 +2,7 @@
 ---
 - name: Configure hosts & deploy application
   hosts: all
-  vars: 
+  vars:
     mongo_bind_ip: 0.0.0.0
     db_host: 10.132.0.2
   tasks:
@@ -13,7 +13,7 @@
         dest: /etc/mongod.conf
         mode: 0644
       tags: db-tag
-      notify: restart mongod 
+      notify: restart mongod
 
     - name: Add config for DB connection
       template:
@@ -27,7 +27,7 @@
         src: files/puma.service
         dest: /etc/systemd/system/puma.service
       tags: app-tag
-      notify: reload puma 
+      notify: reload puma
 
     - name: enable puma
       become: true
@@ -45,7 +45,7 @@
       bundler:
         state: present
         chdir: /home/appuser/reddit
-      tags: deploy-tag 
+      tags: deploy-tag
 
   handlers:
     - name: restart mongod
@@ -53,7 +53,7 @@
       service: name=mongod state=restarted
     - name: reload puma
       become: true
-      systemd: name=puma state=restarted 
+      systemd: name=puma state=restarted
 
 
 

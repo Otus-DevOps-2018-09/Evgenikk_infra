@@ -2,8 +2,12 @@ dist: trusty
 sudo: required
 language: bash
 before_install:
-- curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-09/run.sh |
-  bash
+- curl https://raw.githubusercontent.com/express42/otus-homeworks/2018-09/run.sh | bash
+- pip2 install ansible-lint
+- export ROOT_DIR=`pwd`
+script:
+- cd $ROOT_DIR/ansible/playbooks
+- ansible-lint *
 notifications:
   slack:
     rooms:
