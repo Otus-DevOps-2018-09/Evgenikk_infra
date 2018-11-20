@@ -26,6 +26,8 @@ sudo unzip -o tflint_*.zip
 sudo rm -f tflint_*.zip
 sudo mv -f  /usr/local/src/tflint /usr/local/bin/
 
+export PATH
+
 echo '#######################################################################'
 echo 'Check version of installed packages'
 echo 'packer version:'
@@ -36,7 +38,6 @@ echo 'tflint version:'
 tflint -v
 
 cd $PROJECT_ROOT
-
 
 echo '#######################################################################'
 echo 'ansible-lint tests:'
@@ -54,3 +55,7 @@ echo "Validate immutable.json"
 packer validate -var-file=variables.json.example immutable.json
 echo "Validate ubuntu16.json"
 packer validate -var-file=variables.json.example ubuntu16.json
+
+echo '#######################################################################'
+echo 'Terraform tests:'
+cd $PROJECT_ROOT/terraform/stage
