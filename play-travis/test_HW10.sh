@@ -7,7 +7,7 @@ sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 sudo unzip -o packer_1.3.1_linux_386.zip
 sudo rm -f packer_1.3.1_linux_386.zip
 sudo rm -rf /usr/local/bin/packer
-sudo mv packer /usr/local/bin/
+sudo mv -f packer /usr/local/bin/
 
 #Устанавливаем  ansible-lint
 cd /usr/local/src
