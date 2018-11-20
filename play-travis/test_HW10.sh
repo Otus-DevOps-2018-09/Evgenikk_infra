@@ -2,8 +2,6 @@
 PROJECT_ROOT=`pwd`
 
 # Устанавливаем packer
-echo "rm packer from workdir"
-sudo rm -rf packer*
 echo "download packer"
 sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 echo "unzip packer"
