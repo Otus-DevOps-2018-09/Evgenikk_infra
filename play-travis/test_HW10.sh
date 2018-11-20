@@ -53,15 +53,15 @@ echo '#######################################################################'
 echo 'packer tests:'
 
 echo "Validate app.json"
-packer validate -var-file=packer/variables.json.example packer/app.json  
+packer validate -var-file=packer/variables.json.example packer/app.json  && echo 'app.json validated successfully'
 echo "Validate db.json"
-packer validate -var-file=packer/variables.json.example packer/db.json
+packer validate -var-file=packer/variables.json.example packer/db.jsonecho && echo 'db.json validated successfully'
 cd packer
 
 echo "Validate immutable.json"
-packer validate -var-file=variables.json.example immutable.json
+packer validate -var-file=variables.json.example immutable.json && echo 'immutable.json validated successfully'
 echo "Validate ubuntu16.json"
-packer validate -var-file=variables.json.example ubuntu16.json
+packer validate -var-file=variables.json.example ubuntu16.json && echo 'ubunru16.json validated successfully'
 
 echo '#######################################################################'
 echo 'Terraform tests:'
