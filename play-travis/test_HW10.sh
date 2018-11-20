@@ -2,7 +2,7 @@
 PROJECT_ROOT=`pwd`
 
 # Устанавливаем packer
-sudo rm -f packer*.zip
+sudo rm -rf packer*
 sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 sudo unzip -o packer_1.3.1_linux_386.zip
 sudo rm -f packer_1.3.1_linux_386.zip
