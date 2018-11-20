@@ -5,7 +5,7 @@ PROJECT_ROOT=`pwd`
 sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
 sudo unzip packer_1.3.1_linux_386.zip
 sudo rm -f packer_1.3.1_linux_386.zip
-sudo mv packer /usr/local/bin/
+sudo mv -f packer /usr/local/bin/
 
 #Устанавливаем  ansible-lint
 cd /usr/local/src
@@ -15,13 +15,13 @@ ansible-lint --version
 sudo wget https://releases.hashicorp.com/terraform/0.11.9/terraform_0.11.9_linux_386.zip
 sudo unzip terraform_*.zip
 sudo rm -f terraform_*.zip
-sudo mv /usr/local/src/terraform /usr/local/bin/
+sudo mv -f /usr/local/src/terraform /usr/local/bin/
 
 # Устанавливаем  tflint
 sudo wget https://github.com/wata727/tflint/releases/download/v0.7.2/tflint_linux_386.zip
 sudo unzip tflint_*.zip
 sudo rm -f tflint_*.zip
-sudo mv /usr/local/src/tflint /usr/local/bin/
+sudo mv -f  /usr/local/src/tflint /usr/local/bin/
 
 echo '#######################################################################'
 echo 'Check version of installed packages'
