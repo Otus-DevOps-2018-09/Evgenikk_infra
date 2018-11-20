@@ -56,10 +56,12 @@ echo '#######################################################################'
 echo 'packer tests:'
 
 echo "Validate app.json"
-packer validate -var-file=packer/variables.json.example packer/app.json
+packer validate -var-file=packer/variables.json.example packer/app.json  
 echo "Validate db.json"
+sleep 2
 packer validate -var-file=packer/variables.json.example packer/db.json
 cd packer
+
 echo "Validate immutable.json"
 packer validate -var-file=variables.json.example immutable.json
 echo "Validate ubuntu16.json"
