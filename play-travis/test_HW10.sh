@@ -7,7 +7,7 @@ cd /usr/local/src
 sudo pip install ansible-lint
 ansible-lint --version
 echo 'packer version:'
-packer --version
+packer version
 echo 'terraform  version:'
 terraform --version
 echo 'tflint version:'
