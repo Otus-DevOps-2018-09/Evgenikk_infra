@@ -3,8 +3,9 @@ PROJECT_ROOT=`pwd`
 
 # Устанавливаем packer
 echo "download packer"
+
 cd /var/tmp
-sudo wget https://releases.hashicorp.com/packer/1.3.1/packer_1.3.1_linux_386.zip
+sudo wget https://releases.hashicorp.com/packer/1.3.2/packer_1.3.2_linux_386.zip
 echo "unzip packer"
 sudo unzip -o packer_1.3.1_linux_386.zip
 echo "delete  packer zip "
