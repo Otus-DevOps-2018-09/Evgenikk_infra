@@ -12,7 +12,7 @@ echo 'packer tests:'
 echo "Validate app.json:"
 packer validate -var-file=packer/variables.json.example packer/app.json
 echo "Validate db.json:"
-packer validate -var-file=packer/variables.json.example packer/db.jsonecho && echo
+packer validate -var-file=packer/variables.json.example packer/db.json
 cd packer
 
 echo "Validate immutable.json:"
