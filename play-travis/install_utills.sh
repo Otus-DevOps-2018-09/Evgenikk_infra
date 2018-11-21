@@ -36,8 +36,8 @@ export PATH
 
 echo '#######################################################################'
 echo 'Check version of installed packages'
-#echo 'packer version:'
-#packer version
+echo 'packer version:'
+packer version
 echo 'terraform  version:'
 terraform --version
 echo 'tflint version:'

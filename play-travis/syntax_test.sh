@@ -21,5 +21,21 @@ echo "Validate ubuntu16.json:"
 packer validate -var-file=variables.json.example ubuntu16.json
 
 echo '#######################################################################'
-echo 'Terraform tests:'
+echo 'Terraform tests (stage):'
 cd $PROJECT_ROOT/terraform/stage
+rm backend.tf
+terraform get
+terraform init
+terraform validate -check-variables=false -var-file=terraform.tfvars.example
+tflint
+
+
+echo '#######################################################################'
+echo 'Terraform tests (prod):'
+cd $PROJECT_ROOT/terraform/prod
+rm backend.tf
+terraform get
+terraform init
+terraform validate -check-variables=false -var-file=terraform.tfvars.example
+tflint
+
