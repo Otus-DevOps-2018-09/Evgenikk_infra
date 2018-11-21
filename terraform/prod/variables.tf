@@ -8,6 +8,7 @@ variable disk_image {
 
 variable private_key_path {
   description = "Path to the private key used for ssh access"
+  default = "~/.ssh/appuser"
 }
 
 variable "app_count" {
@@ -32,6 +33,7 @@ variable db_disk_image {
 
 variable public_key_path {
   description = "Path to the public key used for ssh access"
+  default = "~/.ssh/appuser.pub"
 }
 
 variable zone {
