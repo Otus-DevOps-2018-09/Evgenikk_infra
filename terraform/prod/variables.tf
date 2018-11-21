@@ -6,10 +6,6 @@ variable disk_image {
   description = "Disk image"
 }
 
-variable private_key_path {
-  description = "Path to the private key used for ssh access"
-  default = "~/.ssh/appuser"
-}
 
 variable "app_count" {
   description = "number off app instances"

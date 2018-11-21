@@ -27,6 +27,7 @@ rm backend.tf
 terraform get
 terraform init
 terraform validate -check-variables=false -var-file=terraform.tfvars.example
+echo 'TFLINT OUTPUT:'
 tflint
 
 
@@ -37,5 +38,7 @@ rm backend.tf
 terraform get
 terraform init
 terraform validate -check-variables=false -var-file=terraform.tfvars.example
+echo 'TFLINT OUTPUT:'
 tflint
+echo 'END'
 
