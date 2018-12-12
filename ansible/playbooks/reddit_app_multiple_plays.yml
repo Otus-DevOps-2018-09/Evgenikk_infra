@@ -44,7 +44,7 @@
   handlers:
     - name: reload puma
       systemd: name=puma state=restarted
- 
+
 - name: deployment
   hosts: app
   tags: deploy-tag
@@ -63,13 +63,6 @@
   handlers:
     - name: reload puma
       systemd: name=puma state=restarted
- 
-
-
-
-
-       
-     
 
 
 
