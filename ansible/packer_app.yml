@@ -1,0 +1,25 @@
+
+
+---
+- name: Configure APP template
+  hosts: all
+  become: true
+  vars:
+   packages:
+    - ruby-full
+    - ruby-bundler
+    - build-essential
+  tasks:
+  - name: Upgrade all packages to the latest version
+    apt:
+      name: "*"
+      state: latest
+      force_apt_get: true
+
+  - name: Install a list of packages
+    apt:
+      name: "{{ packages }}"
+      update_cache: yes
+
+
+
